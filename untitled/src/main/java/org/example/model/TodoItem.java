@@ -1,27 +1,37 @@
 package org.example.model;
 
 public class TodoItem {
-    private String title;
     private Integer id;
+    private String name;
+    private String email;
 
-    private Boolean completed;
-
-    public TodoItem(String title, Integer id, Boolean completed) {
-        this.title = title;
+    public TodoItem(Integer id, String name, String email) {
         this.id = id;
-        this.completed = completed;
+        this.name = name;
+        this.email = email;
     }
 
-    public String getTitle() {
-        return title;
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public Integer getId() {
         return id;
     }
 
-    public Boolean getCompleted() {
-        return completed;
+    public String getName() {
+        return name;
     }
 
+    public String getEmail() {
+        return email;
+    }
 }
