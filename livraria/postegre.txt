@@ -1,0 +1,2 @@
+psql -U <username> -d <database_name> -h <host> -p <port>
+psql -U jacques -d mytable -h localhost -p 5432
