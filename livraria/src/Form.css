@@ -1,0 +1,36 @@
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 20px;
+    padding: 5px;
+    
+}
+
+input{
+    padding: 5px;
+    font-size: 18px;
+    border-radius: 5px;
+    border: 1px solid blue;
+
+}
+
+button{
+    width: fit-content;
+    padding: 5px 15px;
+    font-size: 18px;
+    cursor: pointer;
+    margin: auto;
+    border: none;
+    background-color: #00ffff;
+    border-radius: 5px;
+    border: 1px solid black;
+    box-shadow: 0 0 5px rgba(0, 0, 0,0.5);
+}
+
+.form{
+    max-width: 400px;
+    margin: auto;
+    margin-bottom: 60px;
+    
+}

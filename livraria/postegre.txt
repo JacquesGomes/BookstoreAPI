@@ -1,2 +1,12 @@
 psql -U <username> -d <database_name> -h <host> -p <port>
 psql -U jacques -d mytable -h localhost -p 5432
+psql -U open_user -d banco -h localhost -p 5432
+
+banco=> CREATE TABLE livros(
+banco(> id SERIAL PRIMARY KEY,
+banco(> titulo VARCHAR(100) NOT NULL,
+banco(> autor VARCHAR(100) NOT NULL,
+banco(> ano_publicacao INTEGER,
+banco(> editora VARCHAR(100),
+banco(> numero_paginas INTEGER
+banco(> );
