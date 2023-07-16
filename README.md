@@ -6,7 +6,10 @@ Livraria em construção, com as funções de ler todos os livros e cadastrar no
 <ul>
 <li>A função de deletar somente apaga os livros do frontend, ainda falta implementar o endpoint de exclusão e a respectiva conexão;</li>
 
-<li> A função de alterar um livro também ainda não foi implementada.
+<li> A função de alterar um livro também ainda não foi implementada;
+</li>
+
+<li> Ainda pretendo estilizar e adicionar novas funcionalidades.
 </li>
 
 </ul>
