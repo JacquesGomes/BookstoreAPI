@@ -1,17 +1,20 @@
 form{
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 15px;
     font-size: 20px;
     padding: 5px;
-    
+}
+
+.form h2{
+    margin-bottom: 20px;
 }
 
 input{
     padding: 5px;
     font-size: 18px;
     border-radius: 5px;
-    border: 1px solid blue;
+    border: 1px solid #D5CEA3;
 
 }
 
@@ -22,15 +25,56 @@ button{
     cursor: pointer;
     margin: auto;
     border: none;
-    background-color: #00ffff;
+    background-color: #D5CEA3;
     border-radius: 5px;
     border: 1px solid black;
     box-shadow: 0 0 5px rgba(0, 0, 0,0.5);
 }
 
 .form{
-    max-width: 400px;
+    max-width: 450px;
     margin: auto;
     margin-bottom: 60px;
-    
+    padding: 15px 30px;
+    background-color: #3C2A21;
+    border-radius: 15px;
+}
+
+.books__background{
+    background-color: #3C2A21;
+    border-radius: 15px;
+    padding: 60px 30px;
+    padding-top: 30px;
+    margin: auto;
+    margin-bottom: 60px;
+}
+
+.book{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    max-width: fit-content;
+    font-size: 18px;
+    border: #D5CEA3 solid 1px;
+    border-radius: 15px;
+    padding: 15px 15px;
+    min-width: 230px;
+
+}
+
+.book__icons{
+    width: 100%;
+    text-align: right;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.book__icons button{
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    color: #D5CEA3;
+    font-size: 20px;
 }
