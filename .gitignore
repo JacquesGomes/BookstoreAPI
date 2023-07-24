@@ -54,6 +54,14 @@ bin/
 # production
 /build
 
+# Custom 
+/.idea
+/*/.idea
+/*/gradle/
+/*/gradlew
+/*/gradlew.*
+
+
 # misc
 .DS_Store
 .env.local
