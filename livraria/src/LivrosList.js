@@ -44,12 +44,15 @@ const TodoList = () => {
       <div className='books__background'>
       <h2>Livros cadastrados</h2>
       <div className='books__container'>
-        {books.map((book) => (
+        {books.length === 0 ? (
+          <div className='no-books-registered'>Nenhum livro cadastrado</div>
+          ) : (
+            books.map((book) => (
           <div key={book.titulo} className='book'>
           <div className='book__icons'>
           <h3>{book.titulo}</h3>
           <div>
-          <button onClick={() => handleDeleteBook(book.titulo)}><i class="uil uil-edit"></i></button>
+          {/*<button onClick={() => handleDeleteBook(book.titulo)}><i class="uil uil-edit"></i></button>*/}
           <button onClick={() => handleDeleteBook(book.titulo)}><i class="uil uil-times"></i></button>
           </div>
           </div>
@@ -59,7 +62,7 @@ const TodoList = () => {
             <p>Ano de publicação: {book.anoPublicacao}</p>
             <p>Número de páginas: {book.numeroPaginas}</p>
             </div>
-        ))}
+        )))}
       </div>
       </div>
       </div>
