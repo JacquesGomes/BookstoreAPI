@@ -2,6 +2,8 @@ plugins {
     id 'java'
     id 'org.springframework.boot' version '3.1.1'
     id 'io.spring.dependency-management' version '1.1.0'
+    id 'war'
+
 }
 
 group = 'org.example'
@@ -23,3 +25,33 @@ dependencies {
 test {
     useJUnitPlatform()
 }
+
+// Configure the WAR plugin to use the bootJar task as the source
+war {
+    dependsOn bootJar
+    from { bootJar.archiveFile }
+    into('WEB-INF/lib') { // Place Spring Boot libraries into WEB-INF/lib
+        from configurations.runtimeClasspath
+    }
+}
+
+//
+
+// Configure Tomcat plugin
+tomcat {
+    httpPort = 8080 // Customize the port if needed
+    httpsPort = 8443 // Customize the HTTPS port if needed
+}
+
+// Define the task to deploy the application to Tomcat
+task deployToTomcat(type: com.bmuschko.gradle.tomcat.tasks.Deploy) {
+    dependsOn war // Ensure that the WAR file is generated before deployment
+    description = 'Deploys the WAR file to the Tomcat server'
+    def tomcatUser = 'open_user' // Replace with your Tomcat manager user
+    def tomcatPassword = 'password' // Replace with your Tomcat manager password
+    url = "http://${tomcatUser}:${tomcatPassword}@localhost:8080/manager/text"
+    warFile = file("${buildDir}/libs/${rootProject.name}-${version}.war")
+}
+
+// Add the task to the build lifecycle so it runs with 'gradle build'
+build.dependsOn deployToTomcat
